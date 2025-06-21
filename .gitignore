@@ -121,3 +121,23 @@ build-iPhoneSimulator/
 # .rubocop-https?--*
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,cmake,jekyll,ruby
+
+# CLion IDE files
+.idea/
+cmake-build-*/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Executables
+Hearthvale
+*.exe
+*.out
+*.app
