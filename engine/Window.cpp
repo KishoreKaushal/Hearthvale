@@ -1,5 +1,7 @@
+#include <glad.h>           // must come before anything OpenGL-related
+#include <GLFW/glfw3.h>     // GLFW uses OpenGL, so this goes second
 #include "Window.hpp"
-#include <GLFW/glfw3.h>
+
 #include <iostream>
 
 namespace Hearthvale {
@@ -19,6 +21,10 @@ namespace Hearthvale {
 
         glfwMakeContextCurrent(m_Window);
         std::cout << "GLFW window created successfully.\n";
+
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+            std::cerr << "Failed to initialize GLAD!" << std::endl;
+        }
     }
 
     Window::~Window() {
