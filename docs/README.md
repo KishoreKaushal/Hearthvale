@@ -5,6 +5,7 @@ Welcome to the development logs of **Hearthvale** — a cozy 3D game and engine 
 ## 🗓️ Devlog Timeline
 
 - [🧱 June 21: Engine Bootstrapping & GLFW Setup](posts/2025-06-21-hearthvale-window-bootstrap.md)
+- [🌄 June 22: GLAD Integration, CMake Cleanup & Linking Concepts](posts/2025-06-22-hearthvale-glad-setup.md)
 - [🌄 Upcoming: Renderer Interface and Clear Color](upcoming.md)
 - [⛅ Upcoming: Camera Controls and Input Mapping](upcoming.md)
 
