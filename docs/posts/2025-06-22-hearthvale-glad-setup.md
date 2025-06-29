@@ -13,6 +13,24 @@ Today, we made solid progress in integrating **GLAD** into our Hearthvale engine
 
 ### 🔧 1. Added GLAD to the Engine
 
+GLAD generator configuration:
+
+```json
+{
+  "language" : "c",
+  "specification" : "gl",
+  "api" : "gl",
+  "profile" : "core",
+  "version" : "4.6",
+  "generator" : {
+    "loader" : true,
+    "local_files" : true,
+    "omit_khrplatform" : false
+  },
+  "extension" : []
+}
+```
+
 - Placed `glad.c`, `glad.h`, and `khrplatform.h` inside:
   ```
   engine/
