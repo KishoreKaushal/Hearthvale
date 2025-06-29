@@ -12,14 +12,14 @@ namespace Hearthvale {
             std::exit(EXIT_FAILURE);
         }
 
-        m_Window = glfwCreateWindow(width, height, title, nullptr, nullptr);
-        if (!m_Window) {
+        mWindow = glfwCreateWindow(width, height, title, nullptr, nullptr);
+        if (!mWindow) {
             std::cerr << "Failed to create GLFW window.\n";
             glfwTerminate();
             std::exit(EXIT_FAILURE);
         }
 
-        glfwMakeContextCurrent(m_Window);
+        glfwMakeContextCurrent(mWindow);
         std::cout << "GLFW window created successfully.\n";
 
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -28,7 +28,7 @@ namespace Hearthvale {
     }
 
     Window::~Window() {
-        glfwDestroyWindow(m_Window);
+        glfwDestroyWindow(mWindow);
         glfwTerminate();
     }
 
@@ -37,7 +37,7 @@ namespace Hearthvale {
     }
 
     bool Window::ShouldClose() const {
-        return glfwWindowShouldClose(m_Window);
+        return glfwWindowShouldClose(mWindow);
     }
 
 }

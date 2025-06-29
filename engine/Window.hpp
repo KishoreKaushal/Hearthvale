@@ -13,7 +13,7 @@ public:
     bool ShouldClose() const;
 
 private:
-    GLFWwindow* m_Window;
+    GLFWwindow* mWindow;
 };
 
 }
