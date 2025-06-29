@@ -60,6 +60,7 @@ Core features:
 ```bash
 git clone https://github.com/KishoreKaushal/Hearthvale.git
 cd Hearthvale
+git submodule update --init --recursive
 cmake -B build
 cmake --build build
 ./build/Hearthvale
