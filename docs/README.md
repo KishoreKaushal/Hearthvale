@@ -9,6 +9,10 @@ Welcome to the development logs of **Hearthvale** — a cozy 3D game and engine 
 - [🌄 Upcoming: Renderer Interface and Clear Color](upcoming.md)
 - [⛅ Upcoming: Camera Controls and Input Mapping](upcoming.md)
 
+## 📑 Game Engine Concepts
+
+- [➿ Game Loop](concepts/gameloop-introduction.md)
+
 ---
 
 _Stay tuned as Hearthvale blossoms into a fully playable world over the next two years!_
