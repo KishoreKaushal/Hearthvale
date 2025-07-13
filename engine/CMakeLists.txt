@@ -1,16 +1,33 @@
 # Collect all engine sources
 file(GLOB ENGINE_SRC *.cpp)
 
+# Engine target
 add_library(engine ${ENGINE_SRC})
 
-# Include path for engine headers
-target_include_directories(engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+# Dependencies --------------------------------------------------
 
-# Add GLAD
+# 1. GLAD (internal to engine)
 add_library(glad STATIC glad/glad.c)
 target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad)
 
-target_link_libraries(engine PRIVATE glad glfw)
+# 2. External libs (from project root)
+# Only link to SPDLOG if engine is the top-level project
+if(NOT TARGET spdlog::spdlog_header_only)
+    add_subdirectory(${PROJECT_SOURCE_DIR}/libs/spdlog)
+endif()
+
+# Linking -------------------------------------------------------
+target_link_libraries(engine PRIVATE
+  glad           # Internal GLAD
+  glfw           # From root CMake
+  spdlog::spdlog_header_only  # Header-only SPDLOG
+)
+
+# Include paths -------------------------------------------------
+target_include_directories(engine PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}       # Engine headers
+    ${CMAKE_CURRENT_SOURCE_DIR}/glad  # GLAD headers
+)
 
 # Platform-specific system libraries
 if(UNIX AND NOT APPLE)
